@@ -1,11 +1,14 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { ChevronLeft } from 'lucide-react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import { ChevronDown, ChevronLeft } from 'lucide-react-native';
 
 import Title from '../components/Title';
 import Input from '../components/Input';
+import Checkbox from '../components/Checkbox';
 
 export default function LoginScreen({navigation}) {
+    const [checked, setChecked] = useState(false);
+
     return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -16,6 +19,14 @@ export default function LoginScreen({navigation}) {
             <View style={styles.inputs}>
                 <Input label={"E-mail"} placeholder={"Digite seu e-mail..."} type='email-address' mode='email'/>
                 <Input label={"Senha"} placeholder={"Digite a sua senha..."} type='password' mode='password'/>
+            </View>
+
+            <View style={styles.bottom}>
+                <Checkbox label={"Lembrar senha?"} action={setChecked} value={checked}/>
+
+                <View style={{width: '50%'}}>
+                    <Text style={styles.forgotPassword}>Esqueci minha senha</Text>
+                </View>
             </View>
         </View>
     )
@@ -36,8 +47,22 @@ const styles = StyleSheet.create({
         width: '100%',
     },
 
+    bottom: {
+        width: '100%',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
     inputs: {
         width: '100%',
         gap: 15,
+    },
+
+    forgotPassword: {
+        width: '100%',
+        fontSize: 16,
+        textAlign: 'right',
+        textDecorationLine: 'underline'
     }
 })
