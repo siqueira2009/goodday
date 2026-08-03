@@ -12,7 +12,7 @@ import Button from '../components/Button';
 import Hr from '../components/Hr';
 
 
-export default function CadstroScreen({navigation}) {
+export default function CadastroScreen({navigation}) {
     const [checked, setChecked] = useState(false);
 
     return (
@@ -29,7 +29,7 @@ export default function CadstroScreen({navigation}) {
             </View>
 
             <View style={styles.buttons}>
-                <Button text={"Cadastrar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'100%'} action={() => alert("Funcionalidade indisponível!")}/>
+                <Button text={"Cadastrar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'100%'} action={() => navigation.navigate("Features")}/>
             </View>
 
             <View style={styles.otherHeader}>
