@@ -12,34 +12,24 @@ import Button from '../components/Button';
 import Hr from '../components/Hr';
 
 
-export default function LoginScreen({navigation}) {
+export default function CadstroScreen({navigation}) {
     const [checked, setChecked] = useState(false);
 
     return (
         <View style={styles.container}>
             <View style={styles.top}>
                 <ChevronLeft width="60" height="60" strokeWidth={1.5} color={"#14c871"} onPress={() => navigation.goBack()} style={{marginLeft: -15}}/>
-                <Title title={"Acesse"} subtitle={"Com email e senha"} align="left"/>
+                <Title title={"Cadastrar"} subtitle={"Use seu email e crie uma senha"} align="left"/>
             </View>
 
             <View style={styles.inputs}>
                 <Input label={"E-mail"} placeholder={"Digite seu e-mail..."} type='email-address' mode='email'/>
                 <Input label={"Senha"} placeholder={"Digite a sua senha..."} type='password' mode='password'/>
-            </View>
-
-            <View style={styles.bottom}>
-                <View style={{width: '50%'}}>
-                    <Checkbox label={"Lembrar senha?"} action={setChecked} value={checked}/>
-                </View>
-
-                <View style={{width: '50%'}}>
-                    <Text style={styles.forgotPassword}>Esqueci minha senha</Text>
-                </View>
+                <Input label={"Confirme a senha"} placeholder={"Repita a sua senha..."} type='password' mode='password'/>
             </View>
 
             <View style={styles.buttons}>
-                <Button text={"Acessar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'49%'} action={() => alert("Funcionalidade indisponível!")}/>
-                <Button text={"Cadastrar"} border={"#14c871"} width={'49%'} action={() => navigation.navigate("Cadastro")}/>
+                <Button text={"Cadastrar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'100%'} action={() => alert("Funcionalidade indisponível!")}/>
             </View>
 
             <View style={styles.otherHeader}>
