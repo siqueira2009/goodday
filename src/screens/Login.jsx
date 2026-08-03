@@ -38,7 +38,7 @@ export default function LoginScreen({navigation}) {
             </View>
 
             <View style={styles.buttons}>
-                <Button text={"Acessar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'49%'} action={() => alert("Funcionalidade indisponível!")}/>
+                <Button text={"Acessar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'49%'} action={() => navigation.navigate("Features")}/>
                 <Button text={"Cadastrar"} border={"#14c871"} width={'49%'} action={() => navigation.navigate("Cadastro")}/>
             </View>
 
