@@ -11,10 +11,6 @@ export default function Title({title, subtitle = null}) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        width: '100%',
-    },
-
     title: {
         textAlign: 'center',
         fontSize: 38,

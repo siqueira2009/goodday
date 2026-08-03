@@ -16,7 +16,7 @@ export default function Button({image = null, text, textColor, bg = null, border
 const styles = StyleSheet.create({
     container: {
         width: '90%',
-        height: 50,
+        height: 60,
         gap: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     text: {
         flex: 1,
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: 18,
+        fontWeight: 500
     }
 });

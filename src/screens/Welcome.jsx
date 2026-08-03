@@ -9,7 +9,7 @@ import Title from '../components/Title';
 export default function WelcomeScreen() {
     return (
         <View style={styles.container}>
-            <View>
+            <View style={styles.topContainer}>
                 <Image source={girldog} style={styles.image} resizeMode='contain'/>
                 <Title title="Ótimo dia!" subtitle="Como deseja acessar?"/>
             </View>
@@ -26,10 +26,14 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        gap: 25,
+        gap: 30,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+
+    topContainer: {
+        gap: 10
     },
 
     buttonContainer: {
@@ -40,6 +44,6 @@ const styles = StyleSheet.create({
     },
 
     image: {
-        width: 250
+        width: 350,
     }
 })

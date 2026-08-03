@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 
 export default function Navigator() {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_left'}} initialRouteName='Welcome'>
+        <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_left'}} initialRouteName='Splash'>
             <Stack.Screen name="Splash" component={SplashScreen} />
             <Stack.Screen name="Welcome" component={WelcomeScreen} />
         </Stack.Navigator>

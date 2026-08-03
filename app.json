@@ -1,24 +1,33 @@
 {
   "expo": {
-    "name": "27.07.26",
-    "slug": "27.07.26",
+    "name": "GoodDay",
+    "slug": "gd",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/favicon.png",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+        "backgroundColor": "#14c871"
+      },
+      "edgeToEdgeEnabled": false
     },
+    "plugins": [
+      [
+        "expo-navigation-bar",
+        {
+          "position": "absolute",
+          "backgroundColor": "#00000000",
+          "style": "auto",
+          "enforceContrast": false
+        }
+      ]
+    ],
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/assets/favicon.png"
     }
   }
 }
