@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-export default function Checkbox({label, action, value, width = '40%'}) {
+export default function Checkbox({label, action, value, width = '100%'}) {
     return (
         <View style={[styles.checkboxContainer, {width: width}]}>
             <View style={[styles.checkbox, value && styles.pressed]} onTouchEnd={() => action(!value)}></View>
@@ -13,7 +13,6 @@ export default function Checkbox({label, action, value, width = '40%'}) {
 const styles = {
     checkboxContainer: {
         flexDirection: 'row',
-        justifyContent: 'center',
         alignItems: 'center',
         gap: 5,
     },

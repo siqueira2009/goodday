@@ -5,6 +5,8 @@ import { ChevronDown, ChevronLeft } from 'lucide-react-native';
 import Title from '../components/Title';
 import Input from '../components/Input';
 import Checkbox from '../components/Checkbox';
+import Button from '../components/Button';
+
 
 export default function LoginScreen({navigation}) {
     const [checked, setChecked] = useState(false);
@@ -22,11 +24,18 @@ export default function LoginScreen({navigation}) {
             </View>
 
             <View style={styles.bottom}>
-                <Checkbox label={"Lembrar senha?"} action={setChecked} value={checked}/>
+                <View style={{width: '50%'}}>
+                    <Checkbox label={"Lembrar senha?"} action={setChecked} value={checked}/>
+                </View>
 
                 <View style={{width: '50%'}}>
                     <Text style={styles.forgotPassword}>Esqueci minha senha</Text>
                 </View>
+            </View>
+
+            <View style={styles.buttons}>
+                <Button text={"Acessar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'48%'} action={() => alert("Funcionalidade indisponível!")}/>
+                <Button text={"Cadastrar"} border={"#14c871"} width={'48%'} action={() => navigation.navigate("Splash")}/>
             </View>
         </View>
     )
@@ -51,7 +60,7 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
     },
 
     inputs: {
@@ -64,5 +73,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: 'right',
         textDecorationLine: 'underline'
+    },
+
+    buttons: {
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        gap: 15,
     }
 })

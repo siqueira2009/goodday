@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Image, Text } from 'react-native';
 
-export default function Button({image = null, text, textColor, bg = null, border, action = null}) {
+export default function Button({image = null, text, textColor, bg = null, border, action = null, width="90%"}) {
     return (
-        <TouchableOpacity style={[styles.container, bg && {backgroundColor: bg}, border && {borderColor: border}]} onPress={action && action}>
+        <TouchableOpacity style={[styles.container, bg && {backgroundColor: bg}, border && {borderColor: border}, width && {width: width}]} onPress={action && action}>
             {image && (
                 <Image style={styles.image} source={image} resizeMode='contain'/>
             )}
