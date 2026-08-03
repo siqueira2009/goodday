@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import { ChevronDown, ChevronLeft } from 'lucide-react-native';
+
+import google from '../assets/google.png';
+import facebook from '../assets/facebook.png';
 
 import Title from '../components/Title';
 import Input from '../components/Input';
 import Checkbox from '../components/Checkbox';
 import Button from '../components/Button';
+import Hr from '../components/Hr';
 
 
 export default function LoginScreen({navigation}) {
@@ -34,8 +38,19 @@ export default function LoginScreen({navigation}) {
             </View>
 
             <View style={styles.buttons}>
-                <Button text={"Acessar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'48%'} action={() => alert("Funcionalidade indisponível!")}/>
-                <Button text={"Cadastrar"} border={"#14c871"} width={'48%'} action={() => navigation.navigate("Splash")}/>
+                <Button text={"Acessar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'49%'} action={() => alert("Funcionalidade indisponível!")}/>
+                <Button text={"Cadastrar"} border={"#14c871"} width={'49%'} action={() => navigation.navigate("Splash")}/>
+            </View>
+
+            <View style={styles.otherHeader}>
+                <Hr />
+                <Text style={styles.otherText}>Ou continue com</Text>
+                <Hr />
+            </View>
+
+            <View style={styles.otherOptions}>
+                <Image source={google} style={styles.social} resizeMode='contain'/>
+                <Image source={facebook} style={styles.social} resizeMode='contain'/>
             </View>
         </View>
     )
@@ -81,5 +96,29 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         gap: 15,
+    },
+
+    otherHeader: {
+        width: '100%',
+        flexDirection: 'row'
+    },
+
+    otherText: {
+        fontSize: 16,
+        color: '#000',
+        textAlign: 'center',
+    },
+
+    otherOptions: {
+        width: '100%',
+        flexDirection: 'row',
+        gap: 15,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    social: {
+        height: 60,
+        width: 60,
     }
 })
