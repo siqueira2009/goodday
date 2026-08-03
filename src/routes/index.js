@@ -5,15 +5,17 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Importação das telas
 import SplashScreen from '../screens/Splash';
 import WelcomeScreen from '../screens/Welcome';
+import LoginScreen from '../screens/Login';
 
 // Inicialização
 const Stack = createStackNavigator();
 
 export default function Navigator() {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_left'}} initialRouteName='Splash'>
+        <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right'}} initialRouteName='Splash'>
             <Stack.Screen name="Splash" component={SplashScreen} />
             <Stack.Screen name="Welcome" component={WelcomeScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
     )
 }

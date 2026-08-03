@@ -6,7 +6,7 @@ import girldog from '../assets/girldog.jpg'
 import Button from '../components/Button';
 import Title from '../components/Title';
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.topContainer}>
@@ -17,7 +17,7 @@ export default function WelcomeScreen() {
 
             <View style={styles.buttonContainer}>
                 <Button image={icon} text="Como deseja acessar?" textColor="#fff" bg={'#14c871'} border={'#14c871'}/>
-                <Button text="Outras opções" bg={'#fff'} border={'#14c871'}/>
+                <Button text="Outras opções" bg={'#fff'} border={'#14c871'} action={() => navigation.navigate("Login")}/>
             </View>
         </View>
     )
@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
         gap: 30,
         backgroundColor: 'white',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: 20,
     },
 
     topContainer: {
