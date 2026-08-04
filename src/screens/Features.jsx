@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { MoveRight, MoveLeft } from 'lucide-react-native';
+import { MoveRight, MoveLeft, ChevronLeft } from 'lucide-react-native';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 import image1 from '../assets/feature1.png';
@@ -24,6 +24,7 @@ export default function FeaturesScreen({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.top}>
+                <ChevronLeft width="60" height="60" strokeWidth={1.5} color={"white"} onPress={() => navigation.goBack()} style={{marginLeft: -15}}/>
                 <Image source={images[step]} style={styles.image} resizeMode='contain'/>
             </View>
 
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
 
     bottom: {
         width: '100%',
-        height: '60%',
+        height: '50%',
         alignItems: 'center',
         backgroundColor: 'white',
         borderTopLeftRadius: 20,
