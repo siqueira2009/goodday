@@ -13,7 +13,8 @@
       "adaptiveIcon": {
         "backgroundColor": "#14c871"
       },
-      "edgeToEdgeEnabled": false
+      "edgeToEdgeEnabled": false,
+      "package": "com.siqueira2009.gd"
     },
     "plugins": [
       [
@@ -28,6 +29,15 @@
     ],
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "expo-navigation-bar": {
+        "enforceContrast": false,
+        "style": "auto"
+      },
+      "eas": {
+        "projectId": "aff77864-b144-4c59-af29-726cffe61fb5"
+      }
     }
   }
 }
