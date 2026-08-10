@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
-export default function Input({label, placeholder, type="text", mode="text"}) {
+export default function Input({label, placeholder, type="text", mode="text", action}) {
     return (
         <View style={styles.container}>
             <Text style={styles.label}>{label}</Text>
@@ -12,6 +12,8 @@ export default function Input({label, placeholder, type="text", mode="text"}) {
                 inputMode={mode}
                 autoCapitalize={type != "text" && "none"}
                 secureTextEntry={type == "password" && true}
+
+                onChangeText={action}
             />
         </View>
     )
