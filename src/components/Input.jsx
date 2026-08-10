@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Eye, EyeOff } from 'lucide-react-native';
 
 export default function Input({label, placeholder, type="text", mode="text", action}) {
+    const [shown, setShown] = useState(false);
+
     return (
         <View style={styles.container}>
             <Text style={styles.label}>{label}</Text>
@@ -11,10 +14,18 @@ export default function Input({label, placeholder, type="text", mode="text", act
                 keyboardType={type}
                 inputMode={mode}
                 autoCapitalize={type != "text" && "none"}
-                secureTextEntry={type == "password" && true}
+                secureTextEntry={shown && true}
 
                 onChangeText={action}
             />
+
+            {(type == "password" && shown) && (
+                <Eye style={styles.eye} width={30} height={30} strokeWidth={1.5} onPress={() => setShown(!shown)} />
+            )}
+
+            {(type == "password" && !shown && (
+                <EyeOff style={styles.eye} width={30} height={30} strokeWidth={1.5} onPress={() => setShown(!shown)} />
+            ))}
         </View>
     )
 }
@@ -44,4 +55,10 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         fontSize: 18
     },  
+
+    eye: {
+        position: 'absolute',
+        bottom: 19,
+        right: 15,
+    }
 });
