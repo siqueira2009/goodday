@@ -1,6 +1,6 @@
 # 🌱 GoodDay
 
-> ### v.1.0.0: cópia de telas para a aula de PAM
+> ### v.1.1.0: cópia de telas para a aula de PAM
 > App mobile de bem-estar com fluxo de splash, boas-vindas, autenticação e onboarding
 
 Projeto acadêmico desenvolvido em **React Native + Expo** para a disciplina de **PAM (Programação para Aplicativos Móveis)**, reproduzindo o fluxo de telas de um app de bem-estar/saúde: splash, boas-vindas, login, cadastro e apresentação de funcionalidades (onboarding).
