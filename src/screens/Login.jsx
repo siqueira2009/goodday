@@ -19,7 +19,7 @@ export default function LoginScreen({navigation}) {
     const [invalidLogin, setInvalidLogin] = useState(false);
 
     function verifyLogin() {
-        if (email == "adm" && password == "12345") {
+        if (email == "adm" && password == "pam123") {
             navigation.navigate("Features");
             setInvalidLogin(false);
         } else {

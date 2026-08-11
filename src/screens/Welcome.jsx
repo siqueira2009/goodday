@@ -16,7 +16,7 @@ export default function WelcomeScreen({navigation}) {
 
 
             <View style={styles.buttonContainer}>
-                <Button image={icon} text="Como deseja acessar?" textColor="#fff" bg={'#14c871'} border={'#14c871'}/>
+                <Button image={icon} text="Como deseja acessar?" textColor="#fff" bg={'#14c871'} border={'#14c871'} action={() => navigation.navigate("Login")}/>
                 <Button text="Outras opções" bg={'#fff'} border={'#14c871'} action={() => navigation.navigate("Login")}/>
             </View>
         </View>

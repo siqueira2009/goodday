@@ -14,16 +14,16 @@ export default function Input({label, placeholder, type="text", mode="text", act
                 keyboardType={type}
                 inputMode={mode}
                 autoCapitalize={type != "text" && "none"}
-                secureTextEntry={shown && true}
+                secureTextEntry={!shown && true}
 
                 onChangeText={action}
             />
 
-            {(type == "password" && shown) && (
+            {(type == "password" && !shown) && (
                 <Eye style={styles.eye} width={30} height={30} strokeWidth={1.5} onPress={() => setShown(!shown)} />
             )}
 
-            {(type == "password" && !shown && (
+            {(type == "password" && shown && (
                 <EyeOff style={styles.eye} width={30} height={30} strokeWidth={1.5} onPress={() => setShown(!shown)} />
             ))}
         </View>
