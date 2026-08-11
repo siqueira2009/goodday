@@ -14,6 +14,18 @@ import Hr from '../components/Hr';
 
 export default function LoginScreen({navigation}) {
     const [checked, setChecked] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [invalidLogin, setInvalidLogin] = useState(false);
+
+    function verifyLogin() {
+        if (email == "adm" && password == "pam123") {
+            navigation.navigate("Features");
+            setInvalidLogin(false);
+        } else {
+            setInvalidLogin(true);
+        }
+    }
 
     return (
         <View style={styles.container}>
@@ -23,8 +35,9 @@ export default function LoginScreen({navigation}) {
             </View>
 
             <View style={styles.inputs}>
-                <Input label={"E-mail"} placeholder={"Digite seu e-mail..."} type='email-address' mode='email'/>
-                <Input label={"Senha"} placeholder={"Digite a sua senha..."} type='password' mode='password'/>
+                <Input label={"E-mail"} placeholder={"Digite seu e-mail..."} type='email-address' mode='email' action={(value) => setEmail(value)}/>
+                <Input label={"Senha"} placeholder={"Digite a sua senha..."} type='password' mode='password' action={(value) => setPassword(value)}/>
+                <Text style={[styles.invalidLogin, invalidLogin && {display: 'block'}]}>Login inválido!</Text>
             </View>
 
             <View style={styles.bottom}>
@@ -38,7 +51,7 @@ export default function LoginScreen({navigation}) {
             </View>
 
             <View style={styles.buttons}>
-                <Button text={"Acessar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'49%'} action={() => navigation.navigate("Features")}/>
+                <Button text={"Acessar"} textColor={"white"} border={"#14c871"} bg={'#14c871'} width={'49%'} action={() => verifyLogin()}/>
                 <Button text={"Cadastrar"} border={"#14c871"} width={'49%'} action={() => navigation.navigate("Cadastro")}/>
             </View>
 
@@ -120,5 +133,13 @@ const styles = StyleSheet.create({
     social: {
         height: 60,
         width: 60,
+    },
+
+    invalidLogin: {
+        display: 'none',
+        fontSize: 18,
+        color: 'red',
+        fontWeight: 600,
+        textAlign: 'center'
     }
 })

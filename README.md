@@ -132,8 +132,12 @@ Tela de boas-vindas com ilustração, título e dois botões: acesso rápido (vi
 ### 🔐 Login
 Formulário com campos de e-mail e senha, checkbox "Lembrar senha?", link "Esqueci minha senha" e opções de login social (Google/Facebook, apenas visuais). O botão "Acessar" navega para **Features**; o botão "Cadastrar" leva para **Cadastro**.
 
+O usuário correto é `adm` e a senha é `pam123`.
+
 ### 📝 Cadastro
 Formulário de criação de conta com e-mail, senha e confirmação de senha, seguindo o mesmo padrão visual da tela de Login. O botão "Cadastrar" navega direto para **Features**.
+
+Preencher os 3 campos permite avanço.
 
 ### 🧭 Features (onboarding)
 Carrossel de 4 passos com imagem, título, texto e indicador de progresso (`Steps`), navegável por setas (`MoveLeft`/`MoveRight`):
